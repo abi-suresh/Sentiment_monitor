@@ -1,0 +1,195 @@
+/* Basic styling + dark mode */
+
+.App {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #222;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.App.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Toggle switch style */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Main content */
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.input-section {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline-offset: 2px;
+  transition: border-color 0.3s;
+}
+
+.input-section input:focus {
+  border-color: #2196F3;
+}
+
+.input-section button {
+  padding: 0 1rem;
+  font-size: 1rem;
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-section button:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+.input-section button:hover:not(:disabled) {
+  background-color: #1976d2;
+}
+
+.error-message {
+  color: #f44336;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.summary-section {
+  background-color: #e3f2fd;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.App.dark .summary-section {
+  background-color: #1f2a38;
+}
+
+.chart-section {
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.App.dark .chart-section {
+  background-color: #202c3c;
+}
+
+.download-btn {
+  margin-bottom: 2rem;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #388e3c;
+}
+
+.results-section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.results-section th,
+.results-section td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.results-section th {
+  background-color: #f0f0f0;
+}
+
+.App.dark .results-section th {
+  background-color: #263241;
+}
+
+.App.dark .results-section td {
+  border-color: #3a4757;
+}
+
+.results-section tr:hover {
+  background-color: #f5f5f5;
+}
+
+.App.dark .results-section tr:hover {
+  background-color: #314159;
+}
