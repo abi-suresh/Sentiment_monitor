@@ -1,0 +1,11 @@
+streamlit
+pandas
+tweepy
+nltk
+transformers
+torch
+emoji
+plotly
+python-dotenv
+APScheduler
+fpdf
